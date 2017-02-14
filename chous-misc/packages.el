@@ -33,10 +33,12 @@
   '(
     grunt
     guide-key
-    guru
+;    guru
     hackernews
-    perspectives
-    search-engines
+;    perspectives
+;    search-engines
+    sed-mode
+    screenshot
     )
   "The list of Lisp packages required by the chous-misc layer.
 
@@ -83,4 +85,10 @@ Each entry is either:
 (defun chous-misc/init-search-engines ()
   (use-package search-engines)
   )
-;;; packages.el ends here
+(defun chous-misc/init-sed-mode ()
+  (use-package sed-mode)
+  )
+(defun chous-misc/init-screenshot ()
+  (use-package screenshot)
+  )
+;; packages.el ends here

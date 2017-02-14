@@ -1,8 +1,8 @@
-;;; packages.el --- chous-docker layer packages file for Spacemacs.
+;;; packages.el --- chous-scratch layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
 ;;
-;; Author: Jose San Leandro <chous@feynman>
+;; Author: Jose San Leandro <chous@acm-sl.org>
 ;; URL: https://github.com/syl20bnr/spacemacs
 ;;
 ;; This file is not part of GNU Emacs.
@@ -18,25 +18,24 @@
 ;;
 ;;
 ;; Briefly, each package to be installed or configured by this layer should be
-;; added to `chous-docker-packages'. Then, for each package PACKAGE:
+;; added to `chous-scratch-packages'. Then, for each package PACKAGE:
 ;;
 ;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
-;;   function `chous-docker/init-PACKAGE' to load and initialize the package.
+;;   function `chous-scratch/init-PACKAGE' to load and initialize the package.
 
 ;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
-;;   define the functions `chous-docker/pre-init-PACKAGE' and/or
-;;   `chous-docker/post-init-PACKAGE' to customize the package as it is loaded.
+;;   define the functions `chous-scratch/pre-init-PACKAGE' and/or
+;;   `chous-scratch/post-init-PACKAGE' to customize the package as it is loaded.
 
 ;;; Code:
 
-(defconst chous-docker-packages
+(defconst chous-scratch-packages
   '(
-    docker
-    docker-api
-    docker-tramp
-    (dockerfile-mode :repo "spotify/dockerfile-mode" :fetcher github)
+    (scratch location: elpa)
+    (scratch-log location: elpa)
+    (scratch-ext location: elpa)
     )
-  "The list of Lisp packages required by the chous-docker layer.
+  "The list of Lisp packages required by the chous-scratch layer.
 
 Each entry is either:
 
@@ -63,19 +62,13 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-(defun chous-docker/init-docker()
-  (use-package docker)
-  )
-(defun chous-docker/init-docker-api()
-  (use-package docker-api)
-  )
-
-(defun chous-docker/init-docker-tramp()
-  (use-package docker-tramp)
-  )
-
-(defun chous-docker/init-dockerfile-mode()
-  (require 'dockerfile-mode)
-  )
-
+(defun chous-scratch/init-scratch ()
+    (use-package scratch)
+)
+(defun chous-scratch/init-scratch-log ()
+    (use-package scratch-log)
+)
+(defun chous-scratch/init-scratch-ext ()
+    (use-package scratch-ext)
+)
 ;;; packages.el ends here

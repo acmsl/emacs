@@ -1,8 +1,8 @@
-;;; packages.el --- chous-groovy layer packages file for Spacemacs.
+;;; packages.el --- chous-phabricator layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
 ;;
-;; Author: Jose San Leandro <chous@feynman>
+;; Author: Jose San Leandro <chous@acm-sl.org>
 ;; URL: https://github.com/syl20bnr/spacemacs
 ;;
 ;; This file is not part of GNU Emacs.
@@ -18,22 +18,22 @@
 ;;
 ;;
 ;; Briefly, each package to be installed or configured by this layer should be
-;; added to `chous-groovy-packages'. Then, for each package PACKAGE:
+;; added to `chous-phabricator-packages'. Then, for each package PACKAGE:
 ;;
 ;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
-;;   function `chous-groovy/init-PACKAGE' to load and initialize the package.
+;;   function `chous-phabricator/init-PACKAGE' to load and initialize the package.
 
 ;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
-;;   define the functions `chous-groovy/pre-init-PACKAGE' and/or
-;;   `chous-groovy/post-init-PACKAGE' to customize the package as it is loaded.
+;;   define the functions `chous-phabricator/pre-init-PACKAGE' and/or
+;;   `chous-phabricator/post-init-PACKAGE' to customize the package as it is loaded.
 
 ;;; Code:
 
-(defconst chous-groovy-packages
+(defconst chous-phabricator-packages
   '(
-    groovy-mode
+    (phabricator)
     )
-  "The list of Lisp packages required by the chous-groovy layer.
+  "The list of Lisp packages required by the chous-phabricator layer.
 
 Each entry is either:
 
@@ -60,7 +60,8 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-(defun chous-groovy/init-groovy-mode()
-  (use-package groovy-mode)
+
+(defun chous-phabricator/init-phabricator ()
+  (use-package phabricator)
   )
 ;;; packages.el ends here

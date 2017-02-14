@@ -15,14 +15,18 @@
 (defconst chous-org-packages
     '(
       ;; package names go here
+      (org location: org)
+      (org-alert) ; location: elpa)
+      (org-beautify-theme) ; location: elpa)
       (org-doing location: elpa)
       (ob-browser location: elpa)
       (ob-mongo location: elpa)
       (ob-restclient location: elpa)
       (ob-sml location: elpa)
+;      (ob-shell)
       (ob-translate location: elpa)
       (org-ac location: elpa)
-      (org-agenda-properties location: elpa)
+;      (org-agenda-properties location: elpa)
       (org-attach-screenshot location: elpa)
       (org-autolist location: elpa)
       (org-context location: elpa)
@@ -30,8 +34,8 @@
       (org-dotemacs location: elpa)
       (org-drill-table location: elpa)
       (org-ehtml location: elpa)
-      (org-elisp-help location: elpa)
-      (org-eww location: elpa)
+      (org-elisp-help) ; location: elpa)
+      ;;(org-eww location: elpa)
       (org-fstree location: elpa)
       (org-gcal location: elpa)
       (org-grep location: elpa)
@@ -47,7 +51,7 @@
       (org-protocol-jekyll location: elpa)
       (org-readme location: elpa)
       (org-ref location: elpa)
-      (org-table location: elpa)
+      ;;(org-table location: elpa)
       (org-time-budgets location: elpa)
       (org-transform-tree-table location: elpa)
       (org-tree-slide location: elpa)
@@ -66,7 +70,6 @@
       (helm-orgcard location: elpa)
       (hideshow-org location: elpa)
       (literate-starter-kit location: elpa)
-      (ob-browser location: elpa)
       ))
 
 ;; List of packages to exclude.
@@ -236,6 +239,15 @@
   )
 (defun chous-org/init-ob-browser ()
   (use-package ob-browser)
+  )
+(defun chous-org/init-org-alert ()
+  (use-package org-alert)
+  )
+(defun chous-org/init-org-beautify-theme ()
+  (use-package org-beautify-theme)
+  )
+(defun chous-org/init-ob-shell ()
+  (use-package ob-shell)
   )
 ;; Often the body of an initialize function uses `use-package'
 ;; For more info on `use-package', see readme:
